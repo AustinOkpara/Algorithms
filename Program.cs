@@ -1,9 +1,12 @@
-﻿namespace Algos_Practice
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace Algos_Practice
 {
     public class Program
     {
         static void Main(string[] args)
         {
+            // Test for Algo 1
             int[] nums = { -1, 0, 3, 5, 9, 12 };
             int target = 7;
 
@@ -14,7 +17,7 @@
 
 
 
-
+            // Test For Algo 2
             //int totalVersions = 10;
 
             //FirstBad badVersion = new FirstBad();
@@ -23,13 +26,20 @@
             //Console.WriteLine("First bad version: " + firstBadVersion);
 
 
+            //Test for Algo 3
             int[] num = { 1, 3, 5, 6 };
             int targets = 4;
 
-            Search search = new Search();
+            ALGO3 search = new ALGO3();
             int indexx = search.SearchInsert(num, targets);
 
             Console.WriteLine("Target index: " + indexx);
+
+            // Test for Algo 4
+            int[] numss = { -4, -2, 0, 2, 4 };
+            AlGO4 sortedSquares = new AlGO4();
+            int[] result = sortedSquares.SortedSquares(numss);
+            Console.WriteLine(string.Join(", ", result));
 
         }
     }
@@ -66,7 +76,7 @@
 
     // Algo 2
 
-    //public class FirstBad : Program
+    //public class FirstBad
     //{
     //    public  int FirstBadVersion(int n)
     //    {
@@ -93,7 +103,7 @@
     //}
 
     // Algo 3
-    public class Search
+    public class ALGO3
     {
         public int SearchInsert(int[] nums, int target)
         {
@@ -121,4 +131,23 @@
             return left;
         }
     }
+    //Algo 4
+    public class AlGO4
+    {
+        public int[] SortedSquares(int[] nums)
+        {
+            int[] newArray = new int[nums.Length];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                newArray[i] = nums[i] * nums[i];
+            }
+            Array.Sort(newArray);
+
+            return newArray;
+        }
+
+        
+    }
+
 }
