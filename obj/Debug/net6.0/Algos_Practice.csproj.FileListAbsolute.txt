@@ -1,0 +1,15 @@
+C:\Users\DELL\source\repos\Algos_Practice\bin\Debug\net6.0\Algos_Practice.exe
+C:\Users\DELL\source\repos\Algos_Practice\bin\Debug\net6.0\Algos_Practice.deps.json
+C:\Users\DELL\source\repos\Algos_Practice\bin\Debug\net6.0\Algos_Practice.runtimeconfig.json
+C:\Users\DELL\source\repos\Algos_Practice\bin\Debug\net6.0\Algos_Practice.dll
+C:\Users\DELL\source\repos\Algos_Practice\bin\Debug\net6.0\Algos_Practice.pdb
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.AssemblyInfo.cs
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.dll
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\refint\Algos_Practice.dll
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.pdb
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\Algos_Practice.genruntimeconfig.cache
+C:\Users\DELL\source\repos\Algos_Practice\obj\Debug\net6.0\ref\Algos_Practice.dll
