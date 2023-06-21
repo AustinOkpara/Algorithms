@@ -41,8 +41,19 @@ namespace Algos_Practice
             int[] result = sortedSquares.SortedSquares(numss);
             Console.WriteLine(string.Join(", ", result));
 
+            //Test for Algo 5
+            int[] number = { 1, 2, 3, 4, 5, 6, 7 };
+            int k = 3;
+
+            ALGO5 answer = new ALGO5();
+            answer.Rotate(nums, k);
+
+            Console.WriteLine(string.Join(", ", number));
+
         }
     }
+
+
     // Algo 1
     public class Solution
     {
@@ -78,7 +89,7 @@ namespace Algos_Practice
 
     //public class FirstBad
     //{
-    //    public  int FirstBadVersion(int n)
+    //    public int FirstBadVersion(int n)
     //    {
     //        int left = 1;
     //        int right = n;
@@ -148,6 +159,28 @@ namespace Algos_Practice
         }
 
         
+    }
+
+    // Algo 5
+    public class ALGO5
+    {
+        public void Rotate(int[] nums, int k)
+        {
+
+            int[] temp = new int[nums.Length];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+
+                temp[(i + k) % nums.Length] = nums[i];
+            }
+            for (int i = 0; i < nums.Length; i++)
+            {
+                nums[i] = temp[i];
+            }
+            return;
+        }
+
     }
 
 }
