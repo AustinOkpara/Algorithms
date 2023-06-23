@@ -245,7 +245,23 @@ namespace Algos_Practice
 
             }
             return new int[0];
-
         }
+    }
+
+    //Algo 8
+    public class ALGO8
+    {
+        public void ReverseString(char[] s)
+        {
+            int length = s.Length;
+
+            for (int i = 0; i < length / 2; i++)
+            {
+                char temp = s[i];
+                s[i] = s[length - i - 1];
+                s[length - i - 1] = temp;
+            }
+        }
+
     }
 }
