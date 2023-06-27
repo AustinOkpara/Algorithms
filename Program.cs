@@ -347,4 +347,34 @@ namespace Algos_Practice
 
         }
     }
+
+    //Algo 12
+
+    public class ALGO12
+    {
+        public int LengthOfLongestSubstring(string s)
+        {
+
+            int len = s.Length;
+            int start = 0, end = 0, maxLength = 0;
+            HashSet<char> uniqueChars = new HashSet<char>();
+
+            while (end < len)
+            {
+                if (uniqueChars.Contains(s[end]))
+                {
+                    uniqueChars.Remove(s[start]);
+                    start++;
+                }
+                else
+                {
+                    uniqueChars.Add(s[end]);
+                    maxLength = Math.Max(maxLength, end - start + 1);
+                    end++;
+                }
+
+            }
+            return maxLength;
+        }
+    }
 }
