@@ -540,4 +540,49 @@ namespace Algos_Practice
         }
     }
 
+    //Algo 17
+    public class Node
+    {
+        public int val;
+        public Node left;
+        public Node right;
+        public Node next;
+
+        public Node(int val)
+        {
+            this.val = val;
+        }
+
+
+        public Node Connect(Node root)
+        {
+            if (root == null)
+                return null;
+
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                int levelSize = queue.Count;
+
+                for (int i = 0; i < levelSize; i++)
+                {
+                    Node currNode = queue.Dequeue();
+
+                    if (i < levelSize - 1)
+                        currNode.next = queue.Peek();
+
+                    if (currNode.left != null)
+                        queue.Enqueue(currNode.left);
+                    if (currNode.right != null)
+                        queue.Enqueue(currNode.right);
+                }
+            }
+
+            return root;
+        }
+    }
+
+
 }
