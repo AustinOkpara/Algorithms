@@ -377,4 +377,52 @@ namespace Algos_Practice
             return maxLength;
         }
     }
+
+    //ALGO13
+
+    public class ALGO13
+    {
+        public bool CheckInclusion(string s1, string s2)
+        {
+            if (s1.Length > s2.Length)
+                return false;
+
+            int[] count = new int[26];
+
+            // Count characters in s1
+            foreach (char c in s1)
+                count[c - 'a']++;
+
+            int start = 0, end = 0, len = s1.Length;
+
+            while (end < s2.Length)
+            {
+                if (count[s2[end] - 'a'] > 0)
+                {
+                    count[s2[end] - 'a']--;
+                    end++;
+                    len--;
+
+                    if (len == 0)
+                        return true;
+                }
+                // Shrink the window
+                else if (start < end)
+                {
+                    count[s2[start] - 'a']++;
+                    start++;
+                    len++;
+                }
+                // Move both start and end pointers
+                else
+                {
+                    start++;
+                    end++;
+                }
+            }
+
+            return false;
+
+        }
+    }
 }
