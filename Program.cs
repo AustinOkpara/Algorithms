@@ -425,4 +425,43 @@ namespace Algos_Practice
 
         }
     }
+
+    public class ALGO14
+    {
+        public int[][] FloodFill(int[][] image, int sr, int sc, int color)
+        {
+            int rows = image.Length;
+            int cols = image[0].Length;
+            int sourceColor = image[sr][sc];
+
+            if (sourceColor == color)
+                return image;
+
+            Queue<(int, int)> queue = new Queue<(int, int)>();
+            queue.Enqueue((sr, sc));
+              int[][] directions = { new int[] { -1, 0 }, new int[] { 1, 0 },
+              new int[] { 0, -1 }, new int[] { 0, 1 } };
+
+            while (queue.Count > 0)
+            {
+                var (row, col) = queue.Dequeue();
+                image[row][col] = color;
+
+                foreach (var dir in directions)
+                {
+                    int newRow = row + dir[0];
+                    int newCol = col + dir[1];
+
+                    if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && image[newRow][newCol] == sourceColor)
+                    {
+                        queue.Enqueue((newRow, newCol));
+                    }
+                }
+            }
+
+            return image;
+        }
+
+
+    }
 }
