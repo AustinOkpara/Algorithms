@@ -798,5 +798,36 @@ namespace Algos_Practice
     }
     //Algo 23
 
+    public class ALGO23
+    {
+        public IList<IList<int>> Permute(int[] nums)
+        {
+            IList<IList<int>> permutations = new List<IList<int>>();
+
+            Backtrack(nums, new List<int>(), permutations);
+
+            return permutations;
+        }
+
+
+        private void Backtrack(int[] nums, List<int> currentPermutation, IList<IList<int>> permutations)
+        {
+            if (currentPermutation.Count == nums.Length)
+            {
+                permutations.Add(new List<int>(currentPermutation));
+                return;
+            }
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (currentPermutation.Contains(nums[i]))
+                    continue;
+
+                currentPermutation.Add(nums[i]);
+                Backtrack(nums, currentPermutation, permutations);
+                currentPermutation.RemoveAt(currentPermutation.Count - 1);
+            }
+        }
+    }
 
 }
