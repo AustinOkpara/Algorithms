@@ -764,6 +764,39 @@ namespace Algos_Practice
             return prev;
         }
     }
+    //Algo 22
+
+    public class ALGO22
+    {
+        public IList<IList<int>> Combine(int n, int k)
+        {
+
+            IList<IList<int>> combinations = new List<IList<int>>();
+            List<int> currentCombination = new List<int>();
+
+            Backtrack(1, n, k, currentCombination, combinations);
+
+            return combinations;
+        }
+
+        private void Backtrack(int start, int n, int k, List<int> currentCombination, IList<IList<int>> combinations)
+        {
+            if (currentCombination.Count == k)
+            {
+                combinations.Add(new List<int>(currentCombination));
+                return;
+            }
+
+            for (int i = start; i <= n; i++)
+            {
+                currentCombination.Add(i);
+                Backtrack(i + 1, n, k, currentCombination, combinations);
+                currentCombination.RemoveAt(currentCombination.Count - 1);
+            }
+        }
+
+    }
+    //Algo 23
 
 
 }
