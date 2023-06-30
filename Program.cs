@@ -829,5 +829,39 @@ namespace Algos_Practice
             }
         }
     }
+    //Algo 24
+
+    public class ALGO24
+    {
+        public IList<string> LetterCasePermutation(string s)
+        {
+            IList<string> permutations = new List<string>();
+            Backtrack(s.ToCharArray(), 0, permutations);
+            return permutations;
+        }
+
+        private void Backtrack(char[] chars, int index, IList<string> permutations)
+        {
+            if (index == chars.Length)
+            {
+                permutations.Add(new string(chars));
+                return;
+            }
+
+            if (char.IsLetter(chars[index]))
+            {
+                chars[index] = char.ToLower(chars[index]);
+                Backtrack(chars, index + 1, permutations);
+
+                chars[index] = char.ToUpper(chars[index]);
+                Backtrack(chars, index + 1, permutations);
+            }
+            else
+            {
+                Backtrack(chars, index + 1, permutations);
+            }
+        }
+
+    }
 
 }
