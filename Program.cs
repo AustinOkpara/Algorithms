@@ -909,5 +909,26 @@ namespace Algos_Practice
         }
 
     }
+    // Algo 27
+
+    public class ALGO27
+    {
+        public int MinimumTotal(IList<IList<int>> triangle)
+        {
+            int numRows = triangle.Count;
+            int[] dp = new int[numRows + 1];
+
+            for (int i = numRows - 1; i >= 0; i--)
+            {
+                for (int j = 0; j < triangle[i].Count; j++)
+                {
+                    dp[j] = triangle[i][j] + Math.Min(dp[j], dp[j + 1]);
+                }
+            }
+
+            return dp[0];
+        }
+
+    }
 
 }
