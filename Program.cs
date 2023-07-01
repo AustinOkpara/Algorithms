@@ -863,5 +863,26 @@ namespace Algos_Practice
         }
 
     }
+    //Algo 25
+    public class ALGO25
+    {
+        public int ClimbStairs(int n)
+        {
+            if (n <= 2)
+                return n;
+
+            int prev1 = 1;  // Number of ways to reach the previous step
+            int prev2 = 2;  // Number of ways to reach the step before the previous step
+
+            for (int i = 3; i <= n; i++)
+            {
+                int current = prev1 + prev2;  // Number of ways to reach the current step
+                prev1 = prev2;
+                prev2 = current;
+            }
+
+            return prev2;
+        }
+    }
 
 }
