@@ -288,13 +288,13 @@ namespace Algos_Practice
     // ALGO 10
     public class ListNode
     {
-      public int val;
-      public ListNode next;
-      public ListNode(int val = 0, ListNode next = null)
-      {
+        public int val;
+        public ListNode next;
+        public ListNode(int val = 0, ListNode next = null)
+        {
             this.val = val;
             this.next = next;
-      }
+        }
 
     }
 
@@ -439,7 +439,7 @@ namespace Algos_Practice
 
             Queue<(int, int)> queue = new Queue<(int, int)>();
             queue.Enqueue((sr, sc));
-              int[][] directions = { new int[] { -1, 0 }, new int[] { 1, 0 },
+            int[][] directions = { new int[] { -1, 0 }, new int[] { 1, 0 },
               new int[] { 0, -1 }, new int[] { 0, 1 } };
 
             while (queue.Count > 0)
@@ -598,7 +598,7 @@ namespace Algos_Practice
 
             Queue<int[]> queue = new Queue<int[]>();
 
-         
+
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
@@ -648,7 +648,7 @@ namespace Algos_Practice
 
             Queue<int[]> queue = new Queue<int[]>();
 
-       
+
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
@@ -665,7 +665,7 @@ namespace Algos_Practice
 
             queue.Enqueue(null);
 
-               int[][] directions = { new int[] { -1, 0 }, new int[] { 1, 0 },
+            int[][] directions = { new int[] { -1, 0 }, new int[] { 1, 0 },
                new int[] { 0, -1 }, new int[] { 0, 1 } };
             while (queue.Count > 0)
             {
@@ -710,7 +710,7 @@ namespace Algos_Practice
     {
         public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         {
-            ListNode dummyHead = new ListNode(0); 
+            ListNode dummyHead = new ListNode(0);
             ListNode current = dummyHead;
 
             while (list1 != null && list2 != null)
@@ -944,7 +944,22 @@ namespace Algos_Practice
     }
 
     //Algo 29
+    public class ALGO29
+    {
+        public int HammingWeight(uint n)
+        {
+            int count = 0;
+
+            while (n != 0)
+            {
+                n &= (n - 1);
+                count++;
+            }
+
+            return count;
+        }
 
 
 
+    }
 }
