@@ -980,4 +980,26 @@ namespace Algos_Practice
             return reversed;
         }
     }
+
+    public class ALGO31
+    {
+        public int SingleNumber(int[] nums)
+        {
+            HashSet<int> set = new HashSet<int>();
+
+            foreach (int num in nums)
+            {
+                if (set.Contains(num))
+                {
+                    set.Remove(num);
+                }
+                else
+                {
+                    set.Add(num);
+                }
+            }
+
+            return set.First();
+        }
+    }
 }
